@@ -28,6 +28,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input {
+  background-color: white !important;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
