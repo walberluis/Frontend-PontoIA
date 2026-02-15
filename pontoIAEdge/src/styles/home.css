@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background: gray;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  background: white;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+  box-shadow: 2px 0 10px rgba(189, 65, 65, 0.1);
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  font-weight: bold;
+  background: #4f7cff;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-title {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 28px;
+}
+
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.camera {
+  height: 160px;
+  background: #cfcfcf;
+  border-radius: 12px;
+}
+
+.alunos-box {
+  background: #f5f5f5;
+  border: 1px solid #bbb;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.alunos-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.alunos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.aluno-card {
+  background: #2f3f74;
+  color: white;
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: black;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
