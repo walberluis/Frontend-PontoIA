@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MonitoramentoAoVivo from '../../pontoIAEdge/src/Site/Pages/MonitoramentoAoVivo';
-import AdicionarAluno from '../../pontoIAEdge/src/Site/Pages/AdicionarAluno';
-import Dashboard from '../../pontoIAEdge/src/Site/Pages/Dashboard';
-import Configuracoes from '../../pontoIAEdge/src/Site/Pages/Configuracoes';
-import PerfilAluno from '../../pontoIAEdge/src/Site/Pages/PerfilAluno';
+import MonitoramentoAoVivo from '../src/Site/Pages/MonitoramentoAoVivo';
+import AdicionarAluno from '../src/Site/Pages/AdicionarAluno'
+import Dashboard from '../src/Site/Pages/Dashboard';
+import Configuracoes from '../src/Site/Pages/Configuracoes';
+import PerfilAluno from '../src/Site/Pages/PerfilAluno';
 import './App.css';
 
 function App() {
