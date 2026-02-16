@@ -1,13 +1,10 @@
-import React from 'react';
-import { Edit2, Trash2, Users, MoreVertical } from 'lucide-react';
-
 const ConfigCard = ({ title, count, showAvatars = false, onEdit, onDelete, onAdd }) => {
   const avatars = ['https://i.pravatar.cc/40?img=1', 'https://i.pravatar.cc/40?img=2', 'https://i.pravatar.cc/40?img=3'];
 
   return (
-    <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 hover:shadow-md transition-shadow">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+    <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-base font-semibold text-gray-800">{title}</h3>
         <div className="flex items-center gap-2">
           <Users className="w-4 h-4 text-gray-500" />
           <span className="text-sm text-gray-600">{count} Alunos</span>
@@ -57,6 +54,4 @@ const ConfigCard = ({ title, count, showAvatars = false, onEdit, onDelete, onAdd
       </div>
     </div>
   );
-};
-
-export default ConfigCard;
+};s

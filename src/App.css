@@ -13,5 +13,5 @@ body, html, #root {
 }
 
 input, select, button {
-  background-color: white !important;
+  background-color: white;
 }
