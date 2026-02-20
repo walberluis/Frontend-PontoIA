@@ -1,5 +1,12 @@
+import React from 'react';
+import { Users, Edit2, Trash2 } from 'lucide-react';
+
 const ConfigCard = ({ title, count, showAvatars = false, onEdit, onDelete, onAdd }) => {
-  const avatars = ['https://i.pravatar.cc/40?img=1', 'https://i.pravatar.cc/40?img=2', 'https://i.pravatar.cc/40?img=3'];
+  const avatars = [
+    'https://i.pravatar.cc/40?img=1',
+    'https://i.pravatar.cc/40?img=2',
+    'https://i.pravatar.cc/40?img=3'
+  ];
 
   return (
     <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 hover:shadow-md transition-shadow">
@@ -54,4 +61,6 @@ const ConfigCard = ({ title, count, showAvatars = false, onEdit, onDelete, onAdd
       </div>
     </div>
   );
-};s
+};
+
+export default ConfigCard;
