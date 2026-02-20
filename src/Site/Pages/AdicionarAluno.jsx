@@ -18,12 +18,6 @@ const AdicionarAluno = () => {
     imagensCount: 0
   });
 
-  const semestreOptions = [
-    { value: '2023', label: '2023' },
-    { value: '2024', label: '2024' },
-    { value: '2025', label: '2025' }
-  ];
-
   const semestreNumeroOptions = [
     { value: '01', label: '01' },
     { value: '02', label: '02' }
@@ -69,44 +63,51 @@ const AdicionarAluno = () => {
       <Sidebar />
       
       <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50">
-        <div className="p-8 max-w-5xl">
+        <div className="p-8 max-w-6xl">
           <h1 className="text-4xl font-bold text-[#4493AC] mb-12">Adicionar Aluno</h1>
 
-          <div className="space-y-6 bg-white">
-            {/* Nome Completo */}
-            <FormInput
-              label="Nome Completo"
-              value={formData.nomeCompleto}
-              onChange={(e) => setFormData({ ...formData, nomeCompleto: e.target.value })}
-              placeholder="Digite o nome completo do aluno"
-            />
+          <div className="space-y-6">
+            {/* Linha 1: Nome, Semestre e Trabalha no Academy */}
+            <div className="grid grid-cols-12 gap-6">
+              <div className="col-span-5">
+                <FormInput
+                  label="Nome Completo"
+                  value={formData.nomeCompleto}
+                  onChange={(e) => setFormData({ ...formData, nomeCompleto: e.target.value })}
+                  placeholder="Walber Luis Santos da Paixão"
+                />
+              </div>
 
-            {/* Semestre e Trabalha no Academy */}
-            <div className="grid grid-cols-3 gap-6">
-              <FormInput
-                label="Semestre de Entrada na UFAL"
-                value={formData.semestre}
-                onChange={(e) => setFormData({ ...formData, semestre: e.target.value })}
-                placeholder="XXXX"
-              />
+              <div className="col-span-2">
+                <FormInput
+                  label="Ano de Ingresso"
+                  value={formData.semestre}
+                  onChange={(e) => setFormData({ ...formData, semestre: e.target.value })}
+                  placeholder="2023"
+                />
+              </div>
               
-              <FormSelect
-                label=""
-                value={formData.semestreNumero}
-                onChange={(e) => setFormData({ ...formData, semestreNumero: e.target.value })}
-                options={semestreNumeroOptions}
-                placeholder="--"
-              />
+              <div className="col-span-2">
+                <FormSelect
+                  label="Semestre"
+                  value={formData.semestreNumero}
+                  onChange={(e) => setFormData({ ...formData, semestreNumero: e.target.value })}
+                  options={semestreNumeroOptions}
+                  placeholder="01"
+                />
+              </div>
 
-              <ToggleSwitch
-                label="Trabalha no Academy"
-                checked={formData.trabalhaAcademy}
-                onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
-              />
+              <div className="col-span-3">
+                <ToggleSwitch
+                  label="Trabalha no Academy"
+                  checked={formData.trabalhaAcademy}
+                  onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
+                />
+              </div>
             </div>
 
-            {/* Turma e Cargo */}
-            <div className="grid grid-cols-2 gap-6">
+            {/* Linha 2: Turma, Cargo, Curso, Trilha */}
+            <div className="grid grid-cols-4 gap-6">
               <FormSelect
                 label="Turma"
                 value={formData.turma}
@@ -120,18 +121,15 @@ const AdicionarAluno = () => {
                 value={formData.cargo}
                 onChange={(e) => setFormData({ ...formData, cargo: e.target.value })}
                 options={cargoOptions}
-                placeholder="Selecione o Cargo"
+                placeholder="Selecione o cargo"
               />
-            </div>
 
-            {/* Curso e Trilha */}
-            <div className="grid grid-cols-2 gap-6">
               <FormSelect
                 label="Curso"
                 value={formData.curso}
                 onChange={(e) => setFormData({ ...formData, curso: e.target.value })}
                 options={cursoOptions}
-                placeholder="Selecione o Curso"
+                placeholder="Selecione o curso"
               />
 
               <FormSelect
@@ -139,11 +137,11 @@ const AdicionarAluno = () => {
                 value={formData.trilha}
                 onChange={(e) => setFormData({ ...formData, trilha: e.target.value })}
                 options={trilhaOptions}
-                placeholder="Selecione a Trilha"
+                placeholder="Selecione a trilha"
               />
             </div>
 
-            {/* Upload de Imagens */}
+            {/* Linha 3: Upload de Imagens */}
             <ImageUpload
               onImageSelect={() => console.log('Selecionar imagem')}
               selectedCount={formData.imagensCount}
