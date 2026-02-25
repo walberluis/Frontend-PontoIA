@@ -74,7 +74,7 @@ const AdicionarAluno = () => {
                   label="Nome Completo"
                   value={formData.nomeCompleto}
                   onChange={(e) => setFormData({ ...formData, nomeCompleto: e.target.value })}
-                  placeholder="Walber Luis Santos da Paixão"
+                  placeholder="Digite o nome completo do aluno"
                 />
               </div>
 
@@ -83,7 +83,7 @@ const AdicionarAluno = () => {
                   label="Ano de Ingresso"
                   value={formData.semestre}
                   onChange={(e) => setFormData({ ...formData, semestre: e.target.value })}
-                  placeholder="2023"
+                  placeholder="XXXX"
                 />
               </div>
               
@@ -93,7 +93,7 @@ const AdicionarAluno = () => {
                   value={formData.semestreNumero}
                   onChange={(e) => setFormData({ ...formData, semestreNumero: e.target.value })}
                   options={semestreNumeroOptions}
-                  placeholder="01"
+                  placeholder="--"
                 />
               </div>
 
