@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormInput = ({ label, value, onChange, placeholder, type = 'text' }) => {
   return (
-    <div className="flex flex-col gap-2 max-w-md">
+    <div className="flex flex-col gap-2 w-full">
       <label className="text-sm text-gray-600">{label}</label>
       <input
         type={type}
