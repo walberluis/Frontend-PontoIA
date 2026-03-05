@@ -62,9 +62,9 @@ const AdicionarAluno = () => {
     <div className="w-full min-h-screen bg-gray-50">
       <Sidebar />
       
-      <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50">
-        <div className="p-8 max-w-6xl">
-          <h1 className="text-4xl font-bold text-[#4493AC] mb-12">Adicionar Aluno</h1>
+     <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50 flex flex-col items-center">
+        <div className="p-8 w-full max-w-6xl">
+          <h1 className="text-5xl font-bold text-[#4493AC] mb-12">Adicionar Aluno</h1>
 
           <div className="space-y-6">
             {/* Linha 1: Nome, Semestre e Trabalha no Academy */}
@@ -151,7 +151,7 @@ const AdicionarAluno = () => {
             <div className="flex justify-center pt-8">
               <button
                 onClick={handleSubmit}
-                className="px-12 py-3 bg-[#2C3E50] text-white font-semibold rounded-lg hover:bg-[#1a252f] transition-colors"
+                className="px-12 py-3 border-2 border-gray-300 text-[#4493AC] font-semibold rounded-lg hover:bg-[#243D6D] hover:text-white transition-colors"
               >
                 Registrar Aluno
               </button>

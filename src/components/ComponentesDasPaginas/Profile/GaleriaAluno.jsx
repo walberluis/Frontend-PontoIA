@@ -5,7 +5,7 @@ const GaleriaAluno = ({ quantidade = 9 }) => {
 
   return (
     <div className="border border-black bg-transparent rounded-3xl p-6">
-      <h3 className="text-xl font-bold text-[#2C3E50] text-center mb-6 font-['Inter']">
+      <h3 className="text-2xl font-thin text-[#2C3E50] text-center mb-9 font-['Inter']">
         Galeria do Aluno
       </h3>
 

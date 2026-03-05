@@ -10,11 +10,11 @@ const Sidebar = () => {
   return (
     <div className="w-20 bg-white flex flex-col items-center py-6 space-y-8 fixed left-0 top-0 h-screen z-50 shadow-xl">
       {/* Logo no topo */}
-      <div className="w-12 h-12">
+      <div className="w-12 h-12 items-center">
         <img src="/src/assets/three-bars.svg" alt="Três Barras" className="w-full h-full" />
       </div>
       
-      <div className="flex-1 flex flex-col space-y-6">
+      <div className="flex-1 flex flex-col space-y-6 items-center">
         <button 
           onClick={() => navigate('/')}
           className="bg-white hover:opacity-70"
