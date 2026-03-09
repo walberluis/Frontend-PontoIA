@@ -26,7 +26,7 @@ const AlunoInfoCard = ({ alunoInfo }) => {
           {/* Informações */}
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-3xl font-bold text-[#2C3E50]">{alunoInfo.nome}</h2>
+              <h2 className="text-3xl font-bold text-[#243D6D]">{alunoInfo.nome}</h2>
               <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
                 {alunoInfo.turma}
               </span>

@@ -97,13 +97,19 @@ const AdicionarAluno = () => {
                 />
               </div>
 
-              <div className="col-span-3">
-                <ToggleSwitch
-                  label="Trabalha no Academy"
-                  checked={formData.trabalhaAcademy}
-                  onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
-                />
-              </div>
+                  <div className="col-span-3">
+                    <div className="flex flex-col">
+                      <label className="text-sm text-black mb-1">
+                        Trabalha no Academy
+                      </label>
+                      <div className="flex items-center h-[42px] px-3">
+                        <ToggleSwitch
+                          checked={formData.trabalhaAcademy}
+                          onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
+                        />
+                      </div>
+                    </div>
+                  </div>
             </div>
 
             {/* Linha 2: Turma, Cargo, Curso, Trilha */}
