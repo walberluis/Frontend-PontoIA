@@ -1,7 +1,7 @@
 import React from 'react';
-import { UserX } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 
-const RemoverAlunoModal = ({ isOpen, onClose, onConfirm, nomeAluno }) => {
+const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
 
   return (
@@ -14,22 +14,19 @@ const RemoverAlunoModal = ({ isOpen, onClose, onConfirm, nomeAluno }) => {
 
       {/* Modal */}
       <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden">
-        {/* Faixa superior vermelha */}
-        <div className="h-2 bg-gradient-to-r from-red-400 to-red-600" />
+        {/* Faixa superior colorida */}
+        <div className="h-2 bg-gradient-to-r from-[#4493AC] to-[#243D6D]" />
 
         <div className="p-8 flex flex-col items-center text-center">
           {/* Ícone */}
-          <div className="w-16 h-16 rounded-full bg-red-50 flex items-center justify-center mb-5">
-            <UserX className="w-8 h-8 text-red-500" />
+          <div className="w-16 h-16 rounded-full bg-[#EAF4F8] flex items-center justify-center mb-5">
+            <LogOut className="w-8 h-8 text-[#4493AC]" />
           </div>
 
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Remover Aluno</h2>
-          <p className="text-gray-500 text-sm leading-relaxed mb-2">
-            Tem certeza que deseja remover{' '}
-            <span className="font-semibold text-gray-700">{nomeAluno}</span>?
-          </p>
-          <p className="text-gray-400 text-xs mb-8">
-            Ao confirmar, o aluno será desligado do sistema e seus dados removidos permanentemente.
+          <h2 className="text-2xl font-bold text-[#243D6D] mb-2">Sair da conta</h2>
+          <p className="text-gray-500 text-sm leading-relaxed mb-8">
+            Tem certeza que deseja encerrar sua sessão?<br />
+            Você precisará fazer login novamente para acessar o sistema.
           </p>
 
           {/* Botões */}
@@ -43,10 +40,10 @@ const RemoverAlunoModal = ({ isOpen, onClose, onConfirm, nomeAluno }) => {
             </button>
             <button
               onClick={onConfirm}
-              className="flex-1 py-3 rounded-xl bg-red-500 text-white font-semibold
-                         hover:bg-red-600 transition-colors text-sm"
+              className="flex-1 py-3 rounded-xl bg-[#243D6D] text-white font-semibold
+                         hover:bg-[#1a2e55] transition-colors text-sm"
             >
-              Remover
+              Sair
             </button>
           </div>
         </div>
@@ -55,4 +52,4 @@ const RemoverAlunoModal = ({ isOpen, onClose, onConfirm, nomeAluno }) => {
   );
 };
 
-export default RemoverAlunoModal;
+export default LogoutModal;
