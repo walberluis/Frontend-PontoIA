@@ -61,6 +61,4 @@ const ConfigCard = ({ title, count, showAvatars = false, onEdit, onDelete, onAdd
       </div>
     </div>
   );
-};
-
-export default ConfigCard;
+};s
