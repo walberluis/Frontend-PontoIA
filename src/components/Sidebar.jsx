@@ -7,7 +7,7 @@ import settings   from '../assets/settings.svg';
 import graph      from '../assets/graph.svg';
 import logout     from '../assets/logout.svg';
 import add        from '../assets/add.svg';
-import LogoutModal from '../Site/PopUpsEModals/LogoutModal';
+import LogoutModal from '../Site/PopUpsEModals/logoutmodal';
 
 const Sidebar = () => {
   const navigate = useNavigate();
