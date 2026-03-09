@@ -62,9 +62,9 @@ const AdicionarAluno = () => {
     <div className="w-full min-h-screen bg-gray-50">
       <Sidebar />
       
-      <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50">
-        <div className="p-8 max-w-6xl">
-          <h1 className="text-4xl font-bold text-[#4493AC] mb-12">Adicionar Aluno</h1>
+     <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50 flex flex-col items-center">
+        <div className="p-8 w-full max-w-6xl">
+          <h1 className="text-5xl font-bold text-[#4493AC] mb-12">Adicionar Aluno</h1>
 
           <div className="space-y-6">
             {/* Linha 1: Nome, Semestre e Trabalha no Academy */}
@@ -74,7 +74,7 @@ const AdicionarAluno = () => {
                   label="Nome Completo"
                   value={formData.nomeCompleto}
                   onChange={(e) => setFormData({ ...formData, nomeCompleto: e.target.value })}
-                  placeholder="Walber Luis Santos da Paixão"
+                  placeholder="Digite o nome completo do aluno"
                 />
               </div>
 
@@ -83,7 +83,7 @@ const AdicionarAluno = () => {
                   label="Ano de Ingresso"
                   value={formData.semestre}
                   onChange={(e) => setFormData({ ...formData, semestre: e.target.value })}
-                  placeholder="2023"
+                  placeholder="XXXX"
                 />
               </div>
               
@@ -93,17 +93,23 @@ const AdicionarAluno = () => {
                   value={formData.semestreNumero}
                   onChange={(e) => setFormData({ ...formData, semestreNumero: e.target.value })}
                   options={semestreNumeroOptions}
-                  placeholder="01"
+                  placeholder="--"
                 />
               </div>
 
-              <div className="col-span-3">
-                <ToggleSwitch
-                  label="Trabalha no Academy"
-                  checked={formData.trabalhaAcademy}
-                  onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
-                />
-              </div>
+                  <div className="col-span-3">
+                    <div className="flex flex-col">
+                      <label className="text-sm text-black mb-1">
+                        Trabalha no Academy
+                      </label>
+                      <div className="flex items-center h-[42px] px-3">
+                        <ToggleSwitch
+                          checked={formData.trabalhaAcademy}
+                          onChange={(checked) => setFormData({ ...formData, trabalhaAcademy: checked })}
+                        />
+                      </div>
+                    </div>
+                  </div>
             </div>
 
             {/* Linha 2: Turma, Cargo, Curso, Trilha */}
@@ -151,7 +157,7 @@ const AdicionarAluno = () => {
             <div className="flex justify-center pt-8">
               <button
                 onClick={handleSubmit}
-                className="px-12 py-3 bg-[#2C3E50] text-white font-semibold rounded-lg hover:bg-[#1a252f] transition-colors"
+                className="px-12 py-3 border-2 border-gray-300 text-[#4493AC] font-semibold rounded-lg hover:bg-[#243D6D] hover:text-white transition-colors"
               >
                 Registrar Aluno
               </button>

@@ -20,7 +20,8 @@ const Configuracoes = () => {
 
   const cursos = [
     { title: 'Ciência da Computação', count: 45 },
-    { title: 'Engenharia de Computação', count: 32 }
+    { title: 'Engenharia de Computação', count: 32 },
+    { title: 'Inteligência Artificial', count: 22 }
   ];
 
   return (
@@ -37,7 +38,7 @@ const Configuracoes = () => {
                 <ConfigSection title="Turmas" items={turmas} showAvatars={false} />
               </div>
               <div className="w-[450px] flex-shrink-0">
-                <ConfigSection title="Cargos" items={cargos} showAvatars={true} />
+                <ConfigSection title="Cargos" items={cargos} showAvatars={false} />
               </div>
               <div className="w-[450px] flex-shrink-0">
                 <ConfigSection title="Cursos" items={cursos} showAvatars={false} />

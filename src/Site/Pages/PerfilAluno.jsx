@@ -31,7 +31,8 @@ const PerfilAluno = () => {
       
       <div className="ml-20 min-h-screen overflow-y-auto bg-gray-50">
         <div className="p-8">
-          <PageHeader title="Página do Aluno" showSearch={true} />
+          <PageHeader title="Página do Aluno" showSearch={true}
+          />
 
           <AlunoInfoCard alunoInfo={alunoInfo} />
 
@@ -42,7 +43,7 @@ const PerfilAluno = () => {
           <div className="flex justify-center">
             <button 
               onClick={() => setIsRemoverModalOpen(true)}
-              className="px-16 py-4 bg-gray-300 hover:bg-gray-400 text-red-600 font-semibold rounded-lg transition-colors"
+              className="px-16 py-4 bg-gray-300 text-[#E83535] font-thin rounded-lg hover:bg-[#E83535] hover:text-white transition-colors font-[Inter]"
             >
               Remover Aluno
             </button>

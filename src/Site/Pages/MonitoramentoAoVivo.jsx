@@ -14,18 +14,18 @@ const MonitoramentoAoVivo = () => {
   ];
 
   const alunos = [
-    { id: 1, nome: 'Walber Paixão' },
-    { id: 2, nome: 'Kauê Patricius' },
-    { id: 3, nome: 'Helio Ribeiro' },
-    { id: 4, nome: 'Ludson Lira' },
-    { id: 5, nome: 'Edvar Neto' },
-    { id: 6, nome: 'Victor Hugo' },
-    { id: 7, nome: 'Renalvo Alves' },
-    { id: 8, nome: 'Ryan Barbalho' },
-    { id: 9, nome: 'Raul Alves' },
-    { id: 10, nome: 'José Alves' },
-    { id: 11, nome: 'Antony Dias' },
-    { id: 12, nome: 'Eduardo Maciel' }
+    { id: 1, nome: 'Walber Paixão', nomecompleto: 'Walber Paixão de Oliveira' },
+    { id: 2, nome: 'Kauê Patricius', nomecompleto: 'Kauê Patricius da Silva' },
+    { id: 3, nome: 'Helio Ribeiro', nomecompleto: 'Helio Ribeiro Santos' },
+    { id: 4, nome: 'Ludson Lira', nomecompleto: 'Ludson Lira Oliveira' },
+    { id: 5, nome: 'Edvar Neto', nomecompleto: 'Edvar Neto Lima' },
+    { id: 6, nome: 'Victor Hugo', nomecompleto: 'Victor Hugo Costa' },
+    { id: 7, nome: 'Renalvo Alves', nomecompleto: 'Renalvo Alves Silva' },
+    { id: 8, nome: 'Ryan Barbalho', nomecompleto: 'Ryan Barbalho Santos' },
+    { id: 9, nome: 'Raul Alves', nomecompleto: 'Raul Alves Oliveira' },
+    { id: 10, nome: 'José Alves', nomecompleto: 'José Alves Costa' },
+    { id: 11, nome: 'Antony Dias', nomecompleto: 'Antony Dias Lima' },
+    { id: 12, nome: 'Eduardo Maciel', nomecompleto: 'Eduardo Maciel Santos' }
   ];
 
   return (

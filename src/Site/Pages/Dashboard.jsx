@@ -20,7 +20,7 @@ const Dashboard = () => {
         <div className="p-8">
           <h1 className="text-5xl font-bold text-[#4493AC] mb-12">Dashboard</h1>
 
-          <div className="max-w-5xl max-h-[calc(100vh-12rem)]">
+          <div className="w-full max-h-[calc(100vh-12rem)]">
           <DashboardCard>
             <UltimasEntradas entradas={ultimasEntradas} />
           </DashboardCard>

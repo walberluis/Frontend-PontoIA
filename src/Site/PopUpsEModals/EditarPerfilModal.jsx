@@ -65,11 +65,11 @@ const EditarPerfilModal = ({ isOpen, onClose, alunoInfo }) => {
       />
       
       {/* Modal */}
-      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto text-gray-500">
         <div className="p-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-[#2C3E50]">Editar Perfil</h2>
+            <h2 className="text-3xl font-bold text-[#4493AC]">Editar Perfil</h2>
             <button
               onClick={onClose}
               className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
@@ -81,24 +81,27 @@ const EditarPerfilModal = ({ isOpen, onClose, alunoInfo }) => {
           {/* Formulário */}
           <div className="space-y-6">
             {/* Nome Completo */}
-            <FormInput
+            <div className="grid w-full">
+              <FormInput
               label="Nome Completo"
               value={formData.nomeCompleto}
               onChange={(e) => setFormData({ ...formData, nomeCompleto: e.target.value })}
               placeholder="Walber Luis Santos da Paixão"
             />
+            </div>
+            
 
             {/* Semestre e Trabalha no Academy */}
             <div className="grid grid-cols-3 gap-4">
               <FormInput
-                label="Semestre de Entrada na UFAL"
+                label="Semestre de Entrada"
                 value={formData.semestre}
                 onChange={(e) => setFormData({ ...formData, semestre: e.target.value })}
                 placeholder="2023"
               />
               
               <FormSelect
-                label=""
+                label="Teste"
                 value={formData.semestreNumero}
                 onChange={(e) => setFormData({ ...formData, semestreNumero: e.target.value })}
                 options={semestreNumeroOptions}
@@ -131,41 +134,30 @@ const EditarPerfilModal = ({ isOpen, onClose, alunoInfo }) => {
               />
             </div>
 
-            {/* Turma */}
-            <FormInput
+            {/* Turma e trilha*/}
+            <div className="grid grid-cols-2 gap-4">
+              <FormSelect
               label="Turma"
               value={formData.turma}
               onChange={(e) => setFormData({ ...formData, turma: e.target.value })}
-              placeholder="03"
-            />
+              options={cursoOptions}
+              placeholder="xx"
+            /> 
 
-            {/* Trilha */}
-            <div className="flex flex-col gap-2">
-              <label className="text-sm text-gray-600">Trilha</label>
-              <div className="border-2 border-gray-300 rounded-lg p-4">
-                <div className="grid grid-cols-2 gap-3">
-                  {trilhas.map((trilha) => (
-                    <button
-                      key={trilha.value}
-                      onClick={() => toggleTrilha(trilha.value)}
-                      className={`px-4 py-3 rounded-lg border-2 transition-colors ${
-                        trilhaSelecionada.includes(trilha.value)
-                          ? 'bg-[#2C3E50] text-white border-[#2C3E50]'
-                          : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
-                      }`}
-                    >
-                      {trilha.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            <FormSelect
+              label="Trilha"
+              value={formData.trilha}
+              onChange={(e) => setFormData({ ...formData, trilha: e.target.value })}
+              options={trilhas}
+              placeholder="Selecione a trilha"
+              ></FormSelect>
             </div>
 
             {/* Botão Salvar */}
             <div className="flex justify-center pt-4">
               <button
                 onClick={handleSave}
-                className="px-12 py-3 border-2 border-green-500 text-green-600 font-semibold rounded-lg hover:bg-green-50 transition-colors"
+                className="px-12 py-3 border-2 border-gray-300 text-green-600 font-semibold rounded-lg hover:bg-[#243D6D] hover:text-white transition-colors"
               >
                 Salvar Alterações
               </button>

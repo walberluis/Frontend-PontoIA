@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Edit2, BookOpen, Brain, GraduationCap, Clock } from 'lucide-react';
 import EditarPerfilModal from '../../../Site/PopUpsEModals/EditarPerfilModal';
+import fotoPerfil from '../../../assets/fotoperfil.jpg';
 
 const AlunoInfoCard = ({ alunoInfo }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,8 +12,8 @@ const AlunoInfoCard = ({ alunoInfo }) => {
         <div className="flex items-start gap-8">
           {/* Foto do perfil */}
           <div className="relative">
-            <div className="w-40 h-40 bg-black rounded-full flex items-center justify-center">
-              <div className="w-16 h-16 bg-white rounded-full"></div>
+            <div className="w-40 h-40 rounded-full flex items-center justify-center">
+              <img src={fotoPerfil} alt="Foto de Perfil" className="w-36 h-36 rounded-full object-cover" />
             </div>
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -25,7 +26,7 @@ const AlunoInfoCard = ({ alunoInfo }) => {
           {/* Informações */}
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-3xl font-bold text-[#2C3E50]">{alunoInfo.nome}</h2>
+              <h2 className="text-3xl font-bold text-[#243D6D]">{alunoInfo.nome}</h2>
               <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
                 {alunoInfo.turma}
               </span>
