@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Users, Edit2, Trash2 } from 'lucide-react';
-import { ExcluirItemModal, EditarItemModal } from '../../../Site/PopUpsEModals/ConfigModals';
+import { ExcluirItemModal, EditarItemModal } from '../../../Site/PopUpsEModals/Configmodals';
 
 const ConfigCard = ({ title, count, tipoItem = 'item', onEdit, onDelete }) => {
   const [excluirOpen, setExcluirOpen] = useState(false);
