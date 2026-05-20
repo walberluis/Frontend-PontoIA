@@ -7,8 +7,13 @@ import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
-const ToggleSwitch = styled((props) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+const ToggleSwitch = styled(({ onChange, ...props }) => (
+  <Switch 
+    focusVisibleClassName=".Mui-focusVisible" 
+    disableRipple 
+    onChange={(e) => onChange && onChange(e.target.checked)} 
+    {...props} 
+  />
 ))(({ theme }) => ({
   width: 42,
   height: 26,
