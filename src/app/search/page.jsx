@@ -1,24 +1,12 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Search, SlidersHorizontal, X } from 'lucide-react';
-import fotoperfil from '../../assets/fotoperfil.jpg';
-import Sidebar from '../../components/Sidebar';
+'use client';
 
-// ─── dados mockados ────────────────────────────────────────────────────────────
-const ALUNOS = [
-  { id: 1,  nome: 'Walber Paixão',   turma: 'Turma 01', trilha: 'ia',        nivel: 'graduacao3' },
-  { id: 2,  nome: 'Kauê Patricius',  turma: 'Turma 02', trilha: 'software',  nivel: 'trainee2'   },
-  { id: 3,  nome: 'Helio Ribeiro',   turma: 'Turma 01', trilha: 'embarcados',nivel: 'trainee1'   },
-  { id: 4,  nome: 'Ludson Lira',     turma: 'Turma 03', trilha: 'automacao', nivel: 'graduacao1' },
-  { id: 5,  nome: 'Edvar Neto',      turma: 'Turma 02', trilha: 'ia',        nivel: 'graduacao2' },
-  { id: 6,  nome: 'Victor Hugo',     turma: 'Turma 04', trilha: 'software',  nivel: 'trainee3'   },
-  { id: 7,  nome: 'Renalvo Alves',   turma: 'Turma 03', trilha: 'ia',        nivel: 'trainee4'   },
-  { id: 8,  nome: 'Ryan Barbalho',   turma: 'Turma 01', trilha: 'embarcados',nivel: 'graduacao3' },
-  { id: 9,  nome: 'Raul Alves',      turma: 'Turma 04', trilha: 'automacao', nivel: 'graduacao1' },
-  { id: 10, nome: 'José Alves',      turma: 'Turma 02', trilha: 'software',  nivel: 'trainee2'   },
-  { id: 11, nome: 'Antony Dias',     turma: 'Turma 03', trilha: 'ia',        nivel: 'graduacao2' },
-  { id: 12, nome: 'Eduardo Maciel',  turma: 'Turma 01', trilha: 'software',  nivel: 'trainee1'   },
-];
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { Search, SlidersHorizontal, X, UserX } from 'lucide-react';
+import Sidebar from '@/components/Sidebar';
+
+const fotoperfil = '/assets/fotoperfil.jpg';
+const ALUNOS = [];
 
 const TURMAS  = ['Turma 01','Turma 02','Turma 03','Turma 04'];
 const TRILHAS = [
@@ -53,13 +41,13 @@ const FilterChip = ({ label, active, onClick }) => (
 
 // ─── card do aluno ─────────────────────────────────────────────────────────────
 const AlunoCard = ({ aluno }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const nivelLabel = NIVEIS.find(n => n.value === aluno.nivel)?.label ?? '';
   const trilhaLabel = TRILHAS.find(t => t.value === aluno.trilha)?.label ?? '';
 
   return (
     <div
-      onClick={() => navigate(`/perfil-aluno/${aluno.id}`)}
+      onClick={() => router.push(`/perfil-aluno/${aluno.id}`)}
       className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-5 flex flex-col items-center
                  hover:shadow-xl hover:scale-105 transition-all cursor-pointer group"
     >
@@ -78,6 +66,7 @@ const AlunoCard = ({ aluno }) => {
 
 // ─── página principal ──────────────────────────────────────────────────────────
 const SearchPage = () => {
+  const router = useRouter();
   const [searchTerm,    setSearchTerm]    = useState('');
   const [turmaAtiva,    setTurmaAtiva]    = useState('');
   const [trilhaAtiva,   setTrilhaAtiva]   = useState('');
@@ -213,8 +202,24 @@ const SearchPage = () => {
               : `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}`}
           </p>
 
-          {/* ── grade de alunos ── */}
-          {filtered.length > 0 ? (
+          {/* ── grade de alunos ou estado vazio ── */}
+          {ALUNOS.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-20 bg-white border-2 border-dashed border-gray-300 rounded-3xl p-8 shadow-sm">
+              <div className="w-16 h-16 bg-[#D4E8ED] rounded-full flex items-center justify-center mb-4 text-[#4493AC]">
+                <UserX className="w-8 h-8" />
+              </div>
+              <p className="text-xl font-semibold text-gray-800">Não existem alunos cadastrados</p>
+              <p className="text-sm text-gray-500 mt-1 mb-6 text-center max-w-md">
+                Cadastre novos alunos no sistema para que eles possam ser exibidos aqui e identificados nas câmeras de monitoramento.
+              </p>
+              <button
+                onClick={() => router.push('/adicionar-aluno')}
+                className="px-6 py-2.5 bg-[#4493AC] text-white rounded-full font-semibold shadow-sm hover:bg-[#3b8096] transition-colors"
+              >
+                Cadastrar Aluno
+              </button>
+            </div>
+          ) : filtered.length > 0 ? (
             <div className="border border-black bg-transparent rounded-3xl p-8 shadow-sm">
               <div className="grid grid-cols-4 gap-6">
                 {filtered.map(aluno => (

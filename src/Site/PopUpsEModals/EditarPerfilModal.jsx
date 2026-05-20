@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
-import FormInput from '../../components/ComponentesDasPaginas/AddStudent/FormInput';
-import FormSelect from '../../components/ComponentesDasPaginas/AddStudent/FormSelect';
-import ToggleSwitch from '../../components/ComponentesDasPaginas/AddStudent/ToggleSwitch';
+import FormInput from '@/components/ComponentesDasPaginas/AddStudent/FormInput';
+import FormSelect from '@/components/ComponentesDasPaginas/AddStudent/FormSelect';
+import ToggleSwitch from '@/components/ComponentesDasPaginas/AddStudent/ToggleSwitch';
 
 const EditarPerfilModal = ({ isOpen, onClose, alunoInfo }) => {
   const [formData, setFormData] = useState({

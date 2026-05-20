@@ -1,16 +1,12 @@
+'use client';
+
 import React from 'react';
-import Sidebar from '../../components/Sidebar';
-import DashboardCard from '../../components/ComponentesDasPaginas/Dashboard/DashboardCard';
-import UltimasEntradas from '../../components/ComponentesDasPaginas/Dashboard/UltimasEntradas';
+import Sidebar from '@/components/Sidebar';
+import DashboardCard from '@/components/ComponentesDasPaginas/Dashboard/DashboardCard';
+import UltimasEntradas from '@/components/ComponentesDasPaginas/Dashboard/UltimasEntradas';
 
 const Dashboard = () => {
-  const ultimasEntradas = [
-    { nome: 'Walber Paixão', hora: '5h14m' },
-    { nome: 'Helio Ribeiro', hora: '5h14m' },
-    { nome: 'Edvar Neto', hora: '5h14m' },
-    { nome: 'Ludson Lira', hora: '5h14m' },
-    { nome: 'Ryan Barbalho', hora: '5h14m' }
-  ];
+  const ultimasEntradas = [];
 
   return (
     <div className="w-full min-h-screen bg-gray-50">

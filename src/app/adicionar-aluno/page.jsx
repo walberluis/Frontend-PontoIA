@@ -1,9 +1,11 @@
+'use client';
+
 import React, { useState } from 'react';
-import Sidebar from '../../components/Sidebar';
-import FormInput from '../../components/ComponentesDasPaginas/AddStudent/FormInput';
-import FormSelect from '../../components/ComponentesDasPaginas/AddStudent/FormSelect';
-import ToggleSwitch from '../../components/ComponentesDasPaginas/AddStudent/ToggleSwitch';
-import ImageUpload from '../../components/ComponentesDasPaginas/AddStudent/ImageUpload';
+import Sidebar from '@/components/Sidebar';
+import FormInput from '@/components/ComponentesDasPaginas/AddStudent/FormInput';
+import FormSelect from '@/components/ComponentesDasPaginas/AddStudent/FormSelect';
+import ToggleSwitch from '@/components/ComponentesDasPaginas/AddStudent/ToggleSwitch';
+import ImageUpload from '@/components/ComponentesDasPaginas/AddStudent/ImageUpload';
 
 const AdicionarAluno = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +40,7 @@ const AdicionarAluno = () => {
     { value: 'graduacao3', label: 'Aluno de Graduação III' },
     { value: 'trainee1', label: 'Trainee I' },
     { value: 'trainee2', label: 'Trainee II' },
-    { value: 'trainee3', label: 'Trainee II' },
+    { value: 'trainee3', label: 'Trainee III' },
     { value: 'trainee4', label: 'Trainee IV' }
   ];
 

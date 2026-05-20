@@ -1,12 +1,15 @@
+'use client';
+
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import fotoperfil from '../../../assets/fotoperfil.jpg';
+import { useRouter } from 'next/navigation';
+
+const fotoperfil = '/assets/fotoperfil.jpg';
 
 const AlunoCard = ({ aluno }) => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleClick = () => {
-    navigate(`/perfil-aluno/${aluno.id}`);
+    router.push(`/perfil-aluno/${aluno.id}`);
   };
 
   return (

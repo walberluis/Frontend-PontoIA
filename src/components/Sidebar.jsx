@@ -1,23 +1,26 @@
+'use client';
+
 import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import home       from '../assets/home.svg';
-import threebars  from '../assets/three-bars.svg';
-import search     from '../assets/search.svg';
-import settings   from '../assets/settings.svg';
-import graph      from '../assets/graph.svg';
-import logout     from '../assets/logout.svg';
-import add        from '../assets/add.svg';
-import LogoutModal from '../Site/PopUpsEModals/logoutmodal';
+import { useRouter, usePathname } from 'next/navigation';
+import LogoutModal from '@/Site/PopUpsEModals/logoutmodal';
+
+const home = '/assets/home.svg';
+const threebars = '/assets/three-bars.svg';
+const search = '/assets/search.svg';
+const settings = '/assets/settings.svg';
+const graph = '/assets/graph.svg';
+const logout = '/assets/logout.svg';
+const add = '/assets/add.svg';
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
   const [logoutOpen, setLogoutOpen] = useState(false);
 
   const handleLogout = () => {
     setLogoutOpen(false);
     // Aqui você pode adicionar lógica de logout (limpar token, redirecionar, etc.)
-    navigate('/');
+    router.push('/');
   };
 
   return (
@@ -29,23 +32,23 @@ const Sidebar = () => {
         </div>
 
         <div className="flex-1 flex flex-col space-y-6 items-center">
-          <button onClick={() => navigate('/')} className="bg-white hover:opacity-70">
+          <button onClick={() => router.push('/')} className="bg-white hover:opacity-70">
             <img src={home} alt="Home" className="w-10 h-10" />
           </button>
 
-          <button onClick={() => navigate('/search')} className="transition-opacity hover:opacity-70 bg-white">
+          <button onClick={() => router.push('/search')} className="transition-opacity hover:opacity-70 bg-white">
             <img src={search} alt="Search" className="w-7 h-7" />
           </button>
 
-          <button onClick={() => navigate('/adicionar-aluno')} className="transition-opacity hover:opacity-70 bg-white">
+          <button onClick={() => router.push('/adicionar-aluno')} className="transition-opacity hover:opacity-70 bg-white">
             <img src={add} alt="Adicionar" className="w-7 h-7" />
           </button>
 
-          <button onClick={() => navigate('/dashboard')} className="transition-opacity hover:opacity-70 bg-white">
+          <button onClick={() => router.push('/dashboard')} className="transition-opacity hover:opacity-70 bg-white">
             <img src={graph} alt="Dashboard" className="w-7 h-7" />
           </button>
 
-          <button onClick={() => navigate('/configuracoes')} className="transition-opacity hover:opacity-70 bg-white">
+          <button onClick={() => router.push('/configuracoes')} className="transition-opacity hover:opacity-70 bg-white">
             <img src={settings} alt="Configurações" className="w-7 h-7" />
           </button>
         </div>

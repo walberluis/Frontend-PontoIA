@@ -1,13 +1,17 @@
+'use client';
+
 import React, { useState } from 'react';
-import Sidebar from '../../components/Sidebar';
-import PageHeader from '../../components/ComponentesDasPaginas/Profile/PageHeader'
-import AlunoInfoCard from '../../components/ComponentesDasPaginas/Profile/AlunoInfoCard'
-import GaleriaAluno from '../../components/ComponentesDasPaginas/Profile/GaleriaAluno'
-import RemoverAlunoModal from '../PopUpsEModals/RemoverAlunoModal';
-import { useNavigate } from 'react-router-dom';
+import { useRouter, useParams } from 'next/navigation';
+import Sidebar from '@/components/Sidebar';
+import PageHeader from '@/components/ComponentesDasPaginas/Profile/PageHeader';
+import AlunoInfoCard from '@/components/ComponentesDasPaginas/Profile/AlunoInfoCard';
+import GaleriaAluno from '@/components/ComponentesDasPaginas/Profile/GaleriaAluno';
+import RemoverAlunoModal from '@/Site/PopUpsEModals/RemoverAlunoModal';
 
 const PerfilAluno = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
+  const params = useParams();
+  const id = params?.id;
   const [isRemoverModalOpen, setIsRemoverModalOpen] = useState(false);
 
   const alunoInfo = {
@@ -20,9 +24,9 @@ const PerfilAluno = () => {
   };
 
   const handleRemoverAluno = () => {
-    console.log('Aluno removido');
+    console.log(`Aluno ${id} removido`);
     setIsRemoverModalOpen(false);
-    navigate('/');
+    router.push('/');
   };
 
   return (
@@ -37,7 +41,7 @@ const PerfilAluno = () => {
           <AlunoInfoCard alunoInfo={alunoInfo} />
 
           <div className="my-8">
-            <GaleriaAluno quantidade={9} />
+            <GaleriaAluno quantidade={0} />
           </div>
 
           <div className="flex justify-center">

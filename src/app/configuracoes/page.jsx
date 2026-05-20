@@ -1,28 +1,13 @@
+'use client';
 
 import React from 'react';
-import Sidebar from '../../components/Sidebar';
-import ConfigSection from '../../components/ComponentesDasPaginas/Configurations/ConfigSection';
+import Sidebar from '@/components/Sidebar';
+import ConfigSection from '@/components/ComponentesDasPaginas/Configurations/ConfigSection';
 
 const Configuracoes = () => {
-  const turmas = [
-    { title: 'Turma 01', count: 15 },
-    { title: 'Turma 02', count: 18 },
-    { title: 'Turma 03', count: 21 },
-    { title: 'Turma 04', count: 21 }
-  ];
-
-  const cargos = [
-    { title: 'Aluno de Graduação I', count: 13 },
-    { title: 'Aluno de Graduação II', count: 16 },
-    { title: 'Aluno de Graduação III', count: 18 },
-    { title: 'Trainee I', count: 10 }
-  ];
-
-  const cursos = [
-    { title: 'Ciência da Computação', count: 45 },
-    { title: 'Engenharia de Computação', count: 32 },
-    { title: 'Inteligência Artificial', count: 22 }
-  ];
+  const turmas = [];
+  const cargos = [];
+  const cursos = [];
 
   return (
     <div className="w-full min-h-screen bg-gray-50">

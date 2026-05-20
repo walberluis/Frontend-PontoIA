@@ -1,7 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Edit2, BookOpen, Brain, GraduationCap, Clock } from 'lucide-react';
-import EditarPerfilModal from '../../../Site/PopUpsEModals/EditarPerfilModal';
-import fotoPerfil from '../../../assets/fotoperfil.jpg';
+import EditarPerfilModal from '@/Site/PopUpsEModals/EditarPerfilModal';
+
+const fotoPerfil = '/assets/fotoperfil.jpg';
 
 const AlunoInfoCard = ({ alunoInfo }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

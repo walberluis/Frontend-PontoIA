@@ -3,6 +3,19 @@ import { Plus, MoreVertical } from 'lucide-react';
 import ConfigCard from './ConfigCard';
 
 const ConfigSection = ({ title, items, showAvatars = false }) => {
+  const getEmptyMessage = () => {
+    switch (title.toLowerCase()) {
+      case 'turmas':
+        return 'Nenhuma turma cadastrada';
+      case 'cargos':
+        return 'Nenhum cargo cadastrado';
+      case 'cursos':
+        return 'Nenhum curso cadastrado';
+      default:
+        return 'Nenhum item cadastrado';
+    }
+  };
+
   return (
     <div className="bg-gray-50 rounded-2xl p-4">
       <div className="flex items-center justify-between mb-4">
@@ -17,20 +30,26 @@ const ConfigSection = ({ title, items, showAvatars = false }) => {
         <Plus className="w-6 h-6 text-gray-400" />
       </button>
 
-      {/* Lista de Cards */}
-      <div className="space-y-3">
-        {items.map((item, index) => (
-          <ConfigCard
-            key={index}
-            title={item.title}
-            count={item.count}
-            showAvatars={showAvatars}
-            onEdit={() => console.log('Edit', item.title)}
-            onDelete={() => console.log('Delete', item.title)}
-            onAdd={() => console.log('Add', item.title)}
-          />
-        ))}
-      </div>
+      {/* Lista de Cards ou Estado Vazio */}
+      {items && items.length > 0 ? (
+        <div className="space-y-3">
+          {items.map((item, index) => (
+            <ConfigCard
+              key={index}
+              title={item.title}
+              count={item.count}
+              showAvatars={showAvatars}
+              onEdit={() => console.log('Edit', item.title)}
+              onDelete={() => console.log('Delete', item.title)}
+              onAdd={() => console.log('Add', item.title)}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-8 border-2 border-dashed border-gray-200 rounded-2xl bg-white text-gray-400">
+          <p className="text-sm font-medium">{getEmptyMessage()}</p>
+        </div>
+      )}
     </div>
   );
 };
