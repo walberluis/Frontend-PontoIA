@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Trash2, X, Pencil } from 'lucide-react';
+import { Trash2, X, Pencil, Plus } from 'lucide-react';
 
 // ─── Modal de EXCLUIR ─────────────────────────────────────────────────────────
 export const ExcluirItemModal = ({ isOpen, onClose, onConfirm, nomeItem, tipoItem = 'item' }) => {
@@ -116,6 +116,82 @@ export const EditarItemModal = ({ isOpen, onClose, onConfirm, nomeAtual, tipoIte
                          hover:bg-[#357a96] transition-colors text-sm disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Salvar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ─── Modal de ADICIONAR ──────────────────────────────────────────────────────
+export const AdicionarItemModal = ({ isOpen, onClose, onConfirm, tipoItem = 'item' }) => {
+  const [nome, setNome] = useState('');
+
+  if (!isOpen) return null;
+
+  const handleConfirm = () => {
+    if (nome.trim()) {
+      onConfirm(nome.trim());
+      setNome('');
+      onClose();
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+
+      <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-sm mx-4 overflow-hidden">
+        <div className="h-2 bg-gradient-to-r from-[#4493AC] to-[#243D6D]" />
+
+        <div className="p-8">
+          {/* Header */}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#EAF4F8] flex items-center justify-center">
+                <Plus className="w-5 h-5 text-[#4493AC]" />
+              </div>
+              <h2 className="text-xl font-bold text-[#243D6D]">Adicionar {tipoItem}</h2>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+
+          {/* Campo */}
+          <div className="mb-6">
+            <label className="text-sm text-gray-500 mb-2 block">Nome do(a) {tipoItem}</label>
+            <input
+              type="text"
+              value={nome}
+              placeholder={`Ex: Novo(a) ${tipoItem}`}
+              onChange={e => setNome(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && handleConfirm()}
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none
+                         focus:border-[#4493AC] transition-colors text-gray-800"
+              autoFocus
+            />
+          </div>
+
+          <div className="flex gap-3">
+            <button
+              onClick={onClose}
+              className="flex-1 py-3 rounded-xl border-2 border-gray-200 text-gray-600 font-semibold
+                         hover:bg-gray-50 transition-colors text-sm"
+            >
+              Cancelar
+            </button>
+            <button
+              onClick={handleConfirm}
+              disabled={!nome.trim()}
+              className="flex-1 py-3 rounded-xl bg-[#4493AC] text-white font-semibold
+                         hover:bg-[#357a96] transition-colors text-sm disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Adicionar
             </button>
           </div>
         </div>
