@@ -19,46 +19,97 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     setLogoutOpen(false);
-    // Aqui você pode adicionar lógica de logout (limpar token, redirecionar, etc.)
+    // Lógica de logout
     router.push('/');
   };
 
   return (
     <>
-      <div className="w-20 bg-white flex flex-col items-center py-6 space-y-8 fixed left-0 top-0 h-screen z-50 shadow-xl">
-        {/* Logo */}
-        <div className="w-12 h-12 items-center">
-          <img src={threebars} alt="Menu" className="w-full h-full" />
+      <div className="w-20 hover:w-64 bg-white flex flex-col items-start py-6 fixed left-0 top-0 h-screen z-50 shadow-xl transition-all duration-300 ease-in-out group overflow-hidden">
+        {/* Logo / Menu Header */}
+        <div className="w-full px-5 flex items-center h-12 mb-8">
+          <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <img src={threebars} alt="Menu" className="w-10 h-10" />
+          </div>
+          <span className="ml-4 font-bold text-lg text-[#243D6D] opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            PontoIA
+          </span>
         </div>
 
-        <div className="flex-1 flex flex-col space-y-6 items-center">
-          <button onClick={() => router.push('/')} className="bg-white hover:opacity-70">
-            <img src={home} alt="Home" className="w-10 h-10" />
+        {/* Links de navegação */}
+        <div className="flex-1 flex flex-col space-y-6 items-start w-full">
+          <button 
+            onClick={() => router.push('/')} 
+            className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#4493AC] hover:bg-gray-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap"
+          >
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src={home} alt="Home" className="w-10 h-10" />
+            </div>
+            <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Início
+            </span>
           </button>
 
-          <button onClick={() => router.push('/search')} className="transition-opacity hover:opacity-70 bg-white">
-            <img src={search} alt="Search" className="w-7 h-7" />
+          <button 
+            onClick={() => router.push('/search')} 
+            className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#4493AC] hover:bg-gray-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap"
+          >
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src={search} alt="Search" className="w-7 h-7" />
+            </div>
+            <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Buscar Aluno
+            </span>
           </button>
 
-          <button onClick={() => router.push('/adicionar-aluno')} className="transition-opacity hover:opacity-70 bg-white">
-            <img src={add} alt="Adicionar" className="w-7 h-7" />
+          <button 
+            onClick={() => router.push('/adicionar-aluno')} 
+            className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#4493AC] hover:bg-gray-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap"
+          >
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src={add} alt="Adicionar" className="w-7 h-7" />
+            </div>
+            <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Adicionar Aluno
+            </span>
           </button>
 
-          <button onClick={() => router.push('/dashboard')} className="transition-opacity hover:opacity-70 bg-white">
-            <img src={graph} alt="Dashboard" className="w-7 h-7" />
+          <button 
+            onClick={() => router.push('/dashboard')} 
+            className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#4493AC] hover:bg-gray-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap"
+          >
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src={graph} alt="Dashboard" className="w-7 h-7" />
+            </div>
+            <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Dashboard
+            </span>
           </button>
 
-          <button onClick={() => router.push('/configuracoes')} className="transition-opacity hover:opacity-70 bg-white">
-            <img src={settings} alt="Configurações" className="w-7 h-7" />
+          <button 
+            onClick={() => router.push('/configuracoes')} 
+            className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#4493AC] hover:bg-gray-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap"
+          >
+            <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+              <img src={settings} alt="Configurações" className="w-7 h-7" />
+            </div>
+            <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              Configurações
+            </span>
           </button>
         </div>
 
-        {/* Logout → abre modal */}
+        {/* Botão Sair */}
         <button
           onClick={() => setLogoutOpen(true)}
-          className="transition-opacity hover:opacity-70 bg-white"
+          className="flex items-center w-full px-5 py-2 text-gray-700 hover:text-[#E83535] hover:bg-red-50 bg-transparent border-none transition-colors rounded-xl whitespace-nowrap mt-auto"
         >
-          <img src={logout} alt="Logout" className="w-7 h-7" />
+          <div className="w-10 h-10 flex items-center justify-center flex-shrink-0">
+            <img src={logout} alt="Logout" className="w-7 h-7" />
+          </div>
+          <span className="ml-4 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Sair da Conta
+          </span>
         </button>
       </div>
 
